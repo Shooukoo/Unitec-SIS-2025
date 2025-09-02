@@ -334,7 +334,7 @@ export default function UnitecLandingPage() {
             <div>
               <h4 className="text-lg font-semibold mb-4">Contacto</h4>
               <div className="space-y-2 text-slate-300 text-sm">
-                <p>unitec_sis_cib2025@gmail.com</p>
+                <p>unitec.sis.cib2025@gmail.com</p>
                 <p>WhatsApp: +52 353 137 3007</p>
                 <p>TECNM Campus Jiquilpan</p>
               </div>
