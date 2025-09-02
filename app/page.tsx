@@ -58,7 +58,7 @@ const whatsappGroups = [
     id: 7,
     name: "Exatec",
     members: 67,
-    description: "Red de egresados y networking profesional",
+    description: "Competencia deportiva de ejercicios varios",
     image: "/graduation-cap-alumni-network-professional.png",
     whatsappLink: "https://chat.whatsapp.com/BCvGYm1797J8zyHNpVpJvp",
   },
@@ -136,6 +136,7 @@ const announcements = [
   },
 ]
 
+
 function GroupCard({ group, index }: { group: (typeof whatsappGroups)[0]; index: number }) {
   return (
     <Card
@@ -143,21 +144,25 @@ function GroupCard({ group, index }: { group: (typeof whatsappGroups)[0]; index:
       style={{ animationDelay: `${index * 100}ms` }}
     >
       <CardHeader className="pb-3">
-        <div className="flex items-center justify-between mb-4">
+        <div className="mb-4 overflow-hidden rounded-lg">
+          <img
+            src={group.image || "/placeholder.svg"}
+            alt={`Banner de ${group.name}`}
+            className="w-full h-24 object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+        <div className="flex items-center justify-between mb-2">
           <CardTitle className="text-lg font-semibold text-slate-800 group-hover:text-blue-700 transition-colors duration-300">
             {group.name}
           </CardTitle>
+          <Badge
+            variant="secondary"
+            className="bg-blue-100 text-blue-700 group-hover:bg-blue-200 transition-colors duration-300"
+          >
+            {group.members} miembros
+          </Badge>
         </div>
-        <div className="flex justify-center mb-4">
-          <div className="p-4 bg-blue-50 rounded-xl group-hover:bg-blue-100 transition-colors duration-300 shadow-sm">
-            <img
-              src={group.image || "/placeholder.svg"}
-              alt={`Icono de ${group.name}`}
-              className="w-16 h-16 object-contain group-hover:scale-110 transition-transform duration-300"
-            />
-          </div>
-        </div>
-        <CardDescription className="text-slate-600 text-center">{group.description}</CardDescription>
+        <CardDescription className="text-slate-600">{group.description}</CardDescription>
       </CardHeader>
       <CardContent>
         <Button
@@ -237,7 +242,6 @@ export default function UnitecLandingPage() {
           </div>
         </div>
       </header>
-
       {/* Hero Section */}
       <section className="py-16 px-4">
         <div className="container mx-auto text-center">
@@ -306,7 +310,7 @@ export default function UnitecLandingPage() {
               className="text-lg text-slate-600 max-w-2xl mx-auto animate-fade-in-up"
               style={{ animationDelay: "200ms" }}
             >
-              Mantente al día con los eventos y competencias en nuestra comunidad.
+              Mantente al día con los eventos y competencias de nuestra comunidad.
             </p>
           </div>
 
