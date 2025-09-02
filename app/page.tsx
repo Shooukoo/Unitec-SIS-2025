@@ -155,12 +155,6 @@ function GroupCard({ group, index }: { group: (typeof whatsappGroups)[0]; index:
           <CardTitle className="text-lg font-semibold text-slate-800 group-hover:text-blue-700 transition-colors duration-300">
             {group.name}
           </CardTitle>
-          <Badge
-            variant="secondary"
-            className="bg-blue-100 text-blue-700 group-hover:bg-blue-200 transition-colors duration-300"
-          >
-            {group.members} miembros
-          </Badge>
         </div>
         <CardDescription className="text-slate-600">{group.description}</CardDescription>
       </CardHeader>
@@ -226,7 +220,7 @@ export default function UnitecLandingPage() {
               <div>
                 <h1 className="text-2xl font-bold animate-fade-in">Unitec de Sistemas y Ciberseguridad</h1>
                 <p className="text-slate-300 text-sm animate-fade-in" style={{ animationDelay: "200ms" }}>
-                  Comunidad Estudiantil - Actividades Académicas, Deportivas y Culturales
+                  Comunidad Estudiantil para el Unitec - Actividades Académicas, Deportivas y Culturales
                 </p>
               </div>
             </div>
@@ -288,7 +282,7 @@ export default function UnitecLandingPage() {
               className="text-lg text-slate-600 max-w-2xl mx-auto animate-fade-in-up"
               style={{ animationDelay: "200ms" }}
             >
-              Únete a cualquiera de nuestros 13 grupos especializados. Desde actividades deportivas y culturales hasta
+              Únete a cualquiera de nuestros 13 grupos. Desde actividades deportivas y culturales hasta
               desarrollo artístico.
             </p>
           </div>
