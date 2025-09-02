@@ -1,6 +1,7 @@
 "use client"
 
-import { Shield, Users, MessageCircle, Bell, ExternalLink, Phone } from "lucide-react"
+import { useState } from "react"
+import { Shield, Users, MessageCircle, Bell, ExternalLink, Phone, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -10,7 +11,7 @@ const whatsappGroups = [
     id: 1,
     name: "Dibujo",
     members: 32,
-    description: "Técnicas artísticas y creatividad visual",
+    description: "Concurso de dibujo",
     image: "/drawing-art-palette-brush.png",
     whatsappLink: "https://chat.whatsapp.com/JdAimyGUvccIRQeotMxTIy",
   },
@@ -18,7 +19,7 @@ const whatsappGroups = [
     id: 2,
     name: "Oratoria",
     members: 28,
-    description: "Desarrollo de habilidades de comunicación",
+    description: "Concurso de oratoria",
     image: "/microphone-public-speaking-podium.png",
     whatsappLink: "https://chat.whatsapp.com/ElD20yXuTBcBkMNoJW9lgf",
   },
@@ -26,7 +27,7 @@ const whatsappGroups = [
     id: 3,
     name: "Conocimiento General",
     members: 45,
-    description: "Cultura general y debates académicos",
+    description: "Concurso de cultura general",
     image: "/brain-knowledge-books-lightbulb.png",
     whatsappLink: "https://chat.whatsapp.com/Jnv2JOIKVklLBu5SpX4DJy",
   },
@@ -34,7 +35,7 @@ const whatsappGroups = [
     id: 4,
     name: "Ajedrez",
     members: 24,
-    description: "Estrategia y torneos de ajedrez",
+    description: "Concurso de ajedrez",
     image: "/chess-king-piece-board-strategy.png",
     whatsappLink: "https://chat.whatsapp.com/JpVTH6Ag0i9G0O42uCDQxi",
   },
@@ -42,7 +43,7 @@ const whatsappGroups = [
     id: 5,
     name: "Vestido Reciclado",
     members: 38,
-    description: "Moda sostenible y diseño ecológico",
+    description: "Concurso de moda sostenible y diseño ecológico",
     image: "/recycled-fashion-sustainable-clothing-eco.png",
     whatsappLink: "https://chat.whatsapp.com/E68Bk6EUMiLCZbNB5NIhpW",
   },
@@ -50,7 +51,7 @@ const whatsappGroups = [
     id: 6,
     name: "Sketch",
     members: 29,
-    description: "Dibujo rápido y técnicas de bocetaje",
+    description: "Concurso de Sketch cinematográfico",
     image: "/sketch-pencil-drawing-notebook-artistic.png",
     whatsappLink: "https://chat.whatsapp.com/ENgwbmSbaF6IwCUSnze4PF",
   },
@@ -210,6 +211,8 @@ function AnnouncementCard({ announcement, index }: { announcement: (typeof annou
 }
 
 export default function UnitecLandingPage() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Header */}
@@ -220,20 +223,67 @@ export default function UnitecLandingPage() {
               <div>
                 <h1 className="text-2xl font-bold animate-fade-in">Unitec de Sistemas y Ciberseguridad</h1>
                 <p className="text-slate-300 text-sm animate-fade-in" style={{ animationDelay: "200ms" }}>
-                  Comunidad Estudiantil para el Unitec - Actividades Académicas, Deportivas y Culturales
+                  Actividades Académicas, Deportivas y Culturales
                 </p>
               </div>
             </div>
-            <div className="hidden md:flex items-center space-x-6">
-              <div
-                className="flex items-center space-x-2 text-slate-300 animate-fade-in"
-                style={{ animationDelay: "600ms" }}
-              >
-                <MessageCircle className="w-5 h-5" />
-                <span>13 Grupos Activos</span>
+
+            <div className="flex items-center space-x-4">
+              <div className="hidden md:flex items-center space-x-6">
+                <div
+                  className="flex items-center space-x-2 text-slate-300 animate-fade-in"
+                  style={{ animationDelay: "600ms" }}
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  <span>13 Grupos Activos</span>
+                </div>
               </div>
+
+              {/* Hamburger Menu Button */}
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-white hover:bg-slate-800 p-2"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </Button>
             </div>
           </div>
+
+          {/* Mobile Menu */}
+          {isMenuOpen && (
+            <div className="mt-4 py-4 border-t border-slate-700 animate-fade-in-up">
+              <nav className="flex flex-col space-y-3">
+                <button
+                  className="flex items-center space-x-2 text-slate-300 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-lg transition-all duration-300 text-left"
+                  onClick={() => {
+                    document.getElementById("grupos")?.scrollIntoView({ behavior: "smooth" })
+                    setIsMenuOpen(false)
+                  }}
+                >
+                  <Users className="w-4 h-4" />
+                  <span>Ver Grupos</span>
+                </button>
+                <button
+                  className="flex items-center space-x-2 text-slate-300 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-lg transition-all duration-300 text-left"
+                  onClick={() => {
+                    document.getElementById("avisos")?.scrollIntoView({ behavior: "smooth" })
+                    setIsMenuOpen(false)
+                  }}
+                >
+                  <Bell className="w-4 h-4" />
+                  <span>Ver Avisos</span>
+                </button>
+                <div className="md:hidden pt-2 border-t border-slate-700">
+                  <div className="flex items-center space-x-2 text-slate-400 px-3 py-1 text-sm">
+                    <MessageCircle className="w-4 h-4" />
+                    <span>13 Grupos Activos</span>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          )}
         </div>
       </header>
       {/* Hero Section */}
