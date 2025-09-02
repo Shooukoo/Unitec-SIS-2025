@@ -248,7 +248,7 @@ export default function UnitecLandingPage() {
             className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up"
             style={{ animationDelay: "300ms" }}
           >
-            Únete a la comunidad de Sistemas y Ciberseguridad de UNITEC. Participa en nuestras actividades culturales, académicas y deportivas, incluyendo competencias de Dibujo, Oratoria, Ajedrez, Conocimiento General, Vestido Reciclado, Sketch, Exatec, y torneos de Básquetbol, Voleibol y Futbol en ramas femenil y varonil. Conéctate a nuestros 13 grupos de WhatsApp y encuentra tu espacio ideal.
+            Únete a la comunidad de Sistemas y Ciberseguridad de UNITEC. Participa en nuestras actividades culturales, académicas y deportivas. Conéctate a nuestros 13 grupos de WhatsApp y encuentra tu espacio ideal.
           </p>
           <div
             className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up"
@@ -285,7 +285,7 @@ export default function UnitecLandingPage() {
               style={{ animationDelay: "200ms" }}
             >
               Únete a cualquiera de nuestros 13 grupos especializados. Desde actividades deportivas y culturales hasta
-              desarrollo artístico y networking profesional con egresados.
+              desarrollo artístico.
             </p>
           </div>
 
@@ -306,7 +306,7 @@ export default function UnitecLandingPage() {
               className="text-lg text-slate-600 max-w-2xl mx-auto animate-fade-in-up"
               style={{ animationDelay: "200ms" }}
             >
-              Mantente al día con los eventos, competencias y oportunidades de nuestra comunidad.
+              Mantente al día con los eventos y competencias en nuestra comunidad.
             </p>
           </div>
 
