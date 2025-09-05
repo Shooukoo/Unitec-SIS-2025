@@ -303,12 +303,6 @@ const organizationalChart = {
           instagram: "@ludwig_ivan11",
         },
         {
-          name: "Sergio Octavio.",
-          position: "Comité de Finanzas",
-          photo: "/encargados/usuario.png",
-          instagram: "@checo.finanzas.unitec",
-        },
-        {
           name: "Isamar Chavez.",
           position: "Comité de Finanzas",
           photo: "/encargados/usuario.png",
