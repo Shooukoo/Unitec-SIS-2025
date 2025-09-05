@@ -1,4 +1,5 @@
 "use client"
+import { Analytics } from "@vercel/analytics/next";
 import { useState } from "react"
 import {
   Users,
@@ -170,7 +171,7 @@ const organizationalChart = {
       instagram: "@yatziri_garcia28",
     },
     {
-      name: "Anegel Canela.",
+      name: "Angel Canela.",
       position: "Coordinación General",
       photo: "/encargados/canela.png",
       instagram: "@angelcanelaaa",
@@ -182,21 +183,21 @@ const organizationalChart = {
       description: "Escenografía, inscripciones",
       members: [
         {
-          name: "Mickey.",
+          name: "Miguel Angel.",
           position: "Comité Artístico",
-          photo: "/encargados/persona.png",
-          instagram: "@mickey.unitec",
+          photo: "/encargados/miguel.png",
+          instagram: "@mickeychael.26",
         },
         {
-          name: "Alondra.",
+          name: "Alondra López.",
           position: "Comité Artístico",
-          photo: "/encargados/persona.png",
-          instagram: "@alondra.unitec",
+          photo: "/encargados/alondra.png",
+          instagram: "@alondramedellin12",
         },
         {
-          name: "Checo.",
+          name: "Sergio Octavio.",
           position: "Comité Artístico",
-          photo: "/encargados/persona.png",
+          photo: "/encargados/usuario.png",
           instagram: "@checo.unitec",
         },
       ],
@@ -206,16 +207,16 @@ const organizationalChart = {
       description: "Logística de juegos",
       members: [
         {
-          name: "Omar.",
+          name: "Omar Vega.",
           position: "Comité Deportivo",
-          photo: "/encargados/persona.png",
-          instagram: "@omar.unitec",
+          photo: "/encargados/omar.png",
+          instagram: "@omar_vl_25",
         },
         {
-          name: "Isis.",
+          name: "Isis Lizbeth.",
           position: "Comité Deportivo",
-          photo: "/encargados/persona.png",
-          instagram: "@isis.unitec",
+          photo: "/encargados/isis.png",
+          instagram: "@isis_lizbeth15",
         },
         {
           name: "David Melgoza.",
@@ -230,22 +231,22 @@ const organizationalChart = {
       description: "Espacios, materiales, comunicación",
       members: [
         {
-          name: "Maritza.",
+          name: "Maritza Santibañez.",
           position: "Comité de Logística",
-          photo: "/encargados/persona.png",
-          instagram: "@maritza.unitec",
+          photo: "/encargados/maritza.png",
+          instagram: "@maritza_garcia2004",
         },
         {
-          name: "Poncho.",
+          name: "Alfonso.",
           position: "Comité de Logística",
-          photo: "/encargados/persona.png",
+          photo: "/encargados/poncho.png",
           instagram: "@poncho.unitec",
         },
         {
-          name: "Sahuayo.",
+          name: "Daniel Mendez.",
           position: "Comité de Logística",
-          photo: "/encargados/persona.png",
-          instagram: "@sahuayo.unitec",
+          photo: "/encargados/daniel.png",
+          instagram: "@danielmendez581",
         },
         {
           name: "David Melgoza.",
@@ -254,10 +255,10 @@ const organizationalChart = {
           instagram: "@david_mtz6",
         },
         {
-          name: "Katia.",
+          name: "Katia Paola.",
           position: "Comité de Logística",
-          photo: "/encargados/persona.png",
-          instagram: "@katia.unitec",
+          photo: "/encargados/katia.png",
+          instagram: "@paola_victoria_58",
         },
       ],
     },
@@ -272,16 +273,16 @@ const organizationalChart = {
           instagram: "@__alexm10__",
         },
         {
-          name: "Bryan.",
+          name: "Bryan Esquivel.",
           position: "Comité de Seguridad",
-          photo: "/encargados/persona.png",
-          instagram: "@bryan.unitec",
+          photo: "/encargados/brayan.png",
+          instagram: "@_bryan_esquivel_",
         },
         {
-          name: "Amado.",
+          name: "Amado Carrillo.",
           position: "Comité de Seguridad",
-          photo: "/encargados/persona.png",
-          instagram: "@amado.unitec",
+          photo: "/encargados/amado.png",
+          instagram: "@",
         },
       ],
     },
@@ -290,22 +291,28 @@ const organizationalChart = {
       description: "Presupuesto, patrocinadores",
       members: [
         {
-          name: "Ludwig.",
+          name: "Daniel Villaseñor.",
           position: "Comité de Finanzas",
-          photo: "/encargados/persona.png",
-          instagram: "@ludwig.unitec",
+          photo: "/encargados/danielV.png",
+          instagram: "@",
         },
         {
-          name: "Checo.",
+          name: "Ludwig Iván.",
           position: "Comité de Finanzas",
-          photo: "/encargados/persona.png",
+          photo: "/encargados/ludwig.png",
+          instagram: "@ludwig_ivan11",
+        },
+        {
+          name: "Sergio Octavio.",
+          position: "Comité de Finanzas",
+          photo: "/encargados/usuario.png",
           instagram: "@checo.finanzas.unitec",
         },
         {
-          name: "Isamar.",
+          name: "Isamar Chavez.",
           position: "Comité de Finanzas",
-          photo: "/encargados/persona.png",
-          instagram: "@isamar.unitec",
+          photo: "/encargados/usuario.png",
+          instagram: "@isamarchvez",
         },
       ],
     },
@@ -387,10 +394,7 @@ function AnnouncementCard({ announcement, index }: { announcement: (typeof annou
 function OrganizationalCard({ person }: { person: any }) {
   return (
     <div className="bg-[#0B1120] rounded-2xl p-4 sm:p-6 text-white w-full sm:min-w-[280px] sm:max-w-[320px] mx-auto transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl">
-      {/* Name at top */}
       <h3 className="text-base sm:text-lg font-bold text-left mb-3 sm:mb-4 font-sans">{person.name}</h3>
-
-      {/* Photo placeholder in center */}
       <div className="flex justify-center mb-3 sm:mb-4">
         <div className="w-48 sm:w-60 aspect-[3/4] flex items-center justify-center overflow-hidden rounded-lg">
           <img
@@ -400,14 +404,11 @@ function OrganizationalCard({ person }: { person: any }) {
           />
         </div>
       </div>
-
-      {/* Position below photo */}
       <p className="text-white font-bold text-left mb-3 sm:mb-4 text-sm sm:text-base">{person.position}</p>
-
-      {/* Instagram button at bottom */}
       <button
         className="w-full bg-white text-[#0B1120] rounded-lg py-2 px-4 flex items-center justify-center hover:bg-gray-100 transition-colors duration-300"
         onClick={() => window.open(`https://instagram.com/${person.instagram.replace("@", "")}`, "_blank")}
+        title={`Ir al Instagram de ${person.name}`}
       >
         <Instagram className="w-4 h-4 sm:w-5 sm:h-5" />
       </button>
@@ -437,12 +438,10 @@ function OrganizationalChart() {
         </div>
       </div>
 
-      {/* Committees */}
       <div className="space-y-6">
         <h4 className="text-xl font-semibold text-slate-800 text-center mb-6">Comités</h4>
         {organizationalChart.committees.map((committee, index) => (
           <div key={committee.name} className="border border-slate-200 rounded-lg overflow-hidden">
-            {/* Committee Header */}
             <button
               className="w-full p-4 bg-slate-100 hover:bg-slate-200 transition-colors duration-300 flex items-center justify-between"
               onClick={() => toggleCommittee(committee.name)}
@@ -457,8 +456,6 @@ function OrganizationalChart() {
                 <ChevronRight className="w-5 h-5 text-slate-600" />
               )}
             </button>
-
-            {/* Committee Content */}
             {expandedCommittees.includes(committee.name) && (
               <div className="p-4 sm:p-6 bg-white animate-fade-in-up">
                 <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-4 sm:gap-6">
@@ -484,11 +481,10 @@ export default function UnitecLandingPage() {
     const currentScrollY = window.scrollY
     const windowHeight = window.innerHeight
 
-    // Determine current section based on scroll position
     let currentSectionIndex = 0
 
     if (currentScrollY < windowHeight * 0.8) {
-      currentSectionIndex = 0 // hero
+      currentSectionIndex = 0 
     } else {
       const organigramaEl = document.getElementById("organigrama")
       const gruposEl = document.getElementById("grupos")
@@ -503,7 +499,6 @@ export default function UnitecLandingPage() {
       }
     }
 
-    // Navigate to next section
     const nextSectionIndex = (currentSectionIndex + 1) % sections.length
     const nextSection = sections[nextSectionIndex]
 
@@ -516,7 +511,6 @@ export default function UnitecLandingPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-      {/* Header */}
       <header className="bg-slate-900 text-white shadow-lg animate-slide-down w-full">
         <div className="w-full px-2 sm:px-4 lg:px-6 py-3 sm:py-4 lg:py-6">
           <div className="flex items-center justify-between max-w-7xl mx-auto">
@@ -539,8 +533,6 @@ export default function UnitecLandingPage() {
                   <span>13 Grupos Activos</span>
                 </div>
               </div>
-
-              {/* Hamburger Menu Button */}
               <Button
                 variant="ghost"
                 size="sm"
@@ -551,8 +543,6 @@ export default function UnitecLandingPage() {
               </Button>
             </div>
           </div>
-
-          {/* Mobile Menu */}
           {isMenuOpen && (
             <div className="mt-4 py-4 border-t border-slate-700 animate-fade-in-up max-w-7xl mx-auto">
               <nav className="flex flex-col space-y-3">
