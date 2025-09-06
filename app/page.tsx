@@ -1,6 +1,7 @@
 "use client"
 import { Analytics } from "@vercel/analytics/next";
 import { useState } from "react"
+import Image from "next/image";
 import {
   Users,
   MessageCircle,
@@ -305,7 +306,7 @@ const organizationalChart = {
         {
           name: "Isamar Chavez.",
           position: "Comité de Finanzas",
-          photo: "/encargados/usuario.png",
+          photo: "/encargados/isamar.png",
           instagram: "@isamarchvez",
         },
       ],
@@ -321,9 +322,13 @@ function GroupCard({ group, index }: { group: (typeof whatsappGroups)[0]; index:
     >
       <CardHeader className="pb-3">
         <div className="mb-4 overflow-hidden rounded-lg">
-          <img
+          <Image
             src={group.image || "/placeholder.svg"}
             alt={`Banner de ${group.name}`}
+            width={400}
+            height={200}
+            placeholder="blur"
+            blurDataURL="/placeholder.svg"
             className="w-full h-32 sm:h-24 object-cover group-hover:scale-105 transition-transform duration-300"
           />
         </div>
@@ -391,11 +396,16 @@ function OrganizationalCard({ person }: { person: any }) {
       <h3 className="text-base sm:text-lg font-bold text-left mb-3 sm:mb-4 font-sans">{person.name}</h3>
       <div className="flex justify-center mb-3 sm:mb-4">
         <div className="w-48 sm:w-60 aspect-[3/4] flex items-center justify-center overflow-hidden rounded-lg">
-          <img
+          <Image
             src={person.photo || "/placeholder.svg"}
             alt={`Foto de ${person.name}`}
+            width={300}
+            height={400}
+            placeholder="blur"
+            blurDataURL="/placeholder.svg"
             className="w-full h-full object-cover"
           />
+
         </div>
       </div>
       <p className="text-white font-bold text-left mb-3 sm:mb-4 text-sm sm:text-base">{person.position}</p>
@@ -478,7 +488,7 @@ export default function UnitecLandingPage() {
     let currentSectionIndex = 0
 
     if (currentScrollY < windowHeight * 0.8) {
-      currentSectionIndex = 0 
+      currentSectionIndex = 0
     } else {
       const organigramaEl = document.getElementById("organigrama")
       const gruposEl = document.getElementById("grupos")
