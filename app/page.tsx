@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import {
   Users,
   MessageCircle,
@@ -155,25 +155,25 @@ const organizationalChart = {
       name: "Emanuel Saldaña.",
       position: "Presidente",
       photo: "/encargados/mani.png",
-      instagram: "@saalem_em",
+      instagram: "@many.unitec",
     },
     {
       name: "Edgar Cortés.",
       position: "Vicepresidente",
       photo: "/encargados/edgar.png",
-      instagram: "@edgar_cortes004",
+      instagram: "@edgar.unitec",
     },
     {
       name: "Yatziri García.",
       position: "Secretaria",
       photo: "/encargados/yatziri.png",
-      instagram: "@yatziri_garcia28",
+      instagram: "@yatziri.unitec",
     },
     {
-      name: "Angel Canela.",
+      name: "Canela.",
       position: "Coordinación General",
       photo: "/encargados/canela.png",
-      instagram: "@angelcanelaaa",
+      instagram: "@canela.unitec",
     },
   ],
   committees: [
@@ -182,21 +182,21 @@ const organizationalChart = {
       description: "Escenografía, inscripciones",
       members: [
         {
-          name: "Miguel Angel.",
+          name: "Mickey.",
           position: "Comité Artístico",
-          photo: "/encargados/miguel.png",
-          instagram: "@mickeychael.26",
+          photo: "/encargados/mickey.png",
+          instagram: "@mickey.unitec",
         },
         {
-          name: "Alondra López.",
+          name: "Alondra.",
           position: "Comité Artístico",
           photo: "/encargados/alondra.png",
-          instagram: "@alondramedellin12",
+          instagram: "@alondra.unitec",
         },
         {
-          name: "Sergio Octavio.",
+          name: "Checo.",
           position: "Comité Artístico",
-          photo: "/encargados/usuario.png",
+          photo: "/encargados/checo.png",
           instagram: "@checo.unitec",
         },
       ],
@@ -206,22 +206,22 @@ const organizationalChart = {
       description: "Logística de juegos",
       members: [
         {
-          name: "Omar Vega.",
+          name: "Omar.",
           position: "Comité Deportivo",
           photo: "/encargados/omar.png",
-          instagram: "@omar_vl_25",
+          instagram: "@omar.unitec",
         },
         {
-          name: "Isis Lizbeth.",
+          name: "Isis.",
           position: "Comité Deportivo",
           photo: "/encargados/isis.png",
-          instagram: "@isis_lizbeth15",
+          instagram: "@isis.unitec",
         },
         {
-          name: "David Melgoza.",
+          name: "David.",
           position: "Comité Deportivo",
           photo: "/encargados/david.png",
-          instagram: "@david_mtz6",
+          instagram: "@david.unitec",
         },
       ],
     },
@@ -230,34 +230,34 @@ const organizationalChart = {
       description: "Espacios, materiales, comunicación",
       members: [
         {
-          name: "Maritza Santibañez.",
+          name: "Maritza.",
           position: "Comité de Logística",
           photo: "/encargados/maritza.png",
-          instagram: "@maritza_garcia2004",
+          instagram: "@maritza.unitec",
         },
         {
-          name: "Alfonso.",
+          name: "Poncho.",
           position: "Comité de Logística",
           photo: "/encargados/poncho.png",
           instagram: "@poncho.unitec",
         },
         {
-          name: "Daniel Mendez.",
+          name: "Sahuayo.",
           position: "Comité de Logística",
-          photo: "/encargados/daniel.png",
-          instagram: "@danielmendez581",
+          photo: "/encargados/sahuayo.png",
+          instagram: "@sahuayo.unitec",
         },
         {
-          name: "David Melgoza.",
+          name: "David.",
           position: "Ayuda Presidencial",
-          photo: "/encargados/david.png",
-          instagram: "@david_mtz6",
+          photo: "/encargados/david-presidencial.png",
+          instagram: "@david.presidencial.unitec",
         },
         {
-          name: "Katia Paola.",
+          name: "Katia.",
           position: "Comité de Logística",
           photo: "/encargados/katia.png",
-          instagram: "@paola_victoria_58",
+          instagram: "@katia.unitec",
         },
       ],
     },
@@ -266,22 +266,22 @@ const organizationalChart = {
       description: "Control del Carnaval y actividades",
       members: [
         {
-          name: "Alexis Chavez.",
+          name: "Alexis.",
           position: "Comité de Seguridad",
           photo: "/encargados/alexis.png",
-          instagram: "@__alexm10__",
+          instagram: "@alexis.unitec",
         },
         {
-          name: "Bryan Esquivel.",
+          name: "Bryan.",
           position: "Comité de Seguridad",
-          photo: "/encargados/brayan.png",
-          instagram: "@_bryan_esquivel_",
+          photo: "/encargados/bryan.png",
+          instagram: "@bryan.unitec",
         },
         {
-          name: "Amado Carrillo.",
+          name: "Amado.",
           position: "Comité de Seguridad",
           photo: "/encargados/amado.png",
-          instagram: "@",
+          instagram: "@amado.unitec",
         },
       ],
     },
@@ -290,22 +290,22 @@ const organizationalChart = {
       description: "Presupuesto, patrocinadores",
       members: [
         {
-          name: "Daniel Villaseñor.",
-          position: "Comité de Finanzas",
-          photo: "/encargados/danielV.png",
-          instagram: "@",
-        },
-        {
-          name: "Ludwig Iván.",
+          name: "Ludwig.",
           position: "Comité de Finanzas",
           photo: "/encargados/ludwig.png",
-          instagram: "@ludwig_ivan11",
+          instagram: "@ludwig.unitec",
         },
         {
-          name: "Isamar Chavez.",
+          name: "Checo.",
+          position: "Comité de Finanzas",
+          photo: "/encargados/checo-finanzas.png",
+          instagram: "@checo.finanzas.unitec",
+        },
+        {
+          name: "Isamar.",
           position: "Comité de Finanzas",
           photo: "/encargados/isamar.png",
-          instagram: "@isamarchvez",
+          instagram: "@isamar.unitec",
         },
       ],
     },
@@ -414,7 +414,7 @@ function OrganizationalCard({ person }: { person: any }) {
       <button
         className="w-full bg-white text-[#0B1120] rounded-lg py-2 px-4 flex items-center justify-center hover:bg-gray-100 transition-colors duration-300"
         onClick={() => window.open(`https://instagram.com/${person.instagram.replace("@", "")}`, "_blank")}
-        title={`Ir al Instagram de ${person.name}`}
+        title={`Abrir Instagram de ${person.name}`}
       >
         <Instagram className="w-4 h-4 sm:w-5 sm:h-5" />
       </button>
@@ -484,8 +484,38 @@ function OrganizationalChart() {
 
 export default function UnitecLandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [iframeError, setIframeError] = useState(false)
+  const [iframeLoading, setIframeLoading] = useState(true)
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  })
 
-  const sections = ["hero", "organigrama", "grupos", "avisos"]
+  useEffect(() => {
+    const targetDate = new Date("2025-09-17T23:59:59").getTime()
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime()
+      const difference = targetDate - now
+
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((difference % (1000 * 60)) / 1000),
+        })
+      } else {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 })
+      }
+    }, 1000)
+
+    return () => clearInterval(timer)
+  }, [])
+
+  const sections = ["encuesta", "avisos", "organigrama", "grupos"]
 
   const scrollToNextSection = () => {
     const currentScrollY = window.scrollY
@@ -495,18 +525,18 @@ export default function UnitecLandingPage() {
     let currentSectionIndex = 0
 
     if (currentScrollY < windowHeight * 0.8) {
-      currentSectionIndex = 0 // hero
+      currentSectionIndex = 0 // encuesta
     } else {
+      const avisosEl = document.getElementById("avisos")
       const organigramaEl = document.getElementById("organigrama")
       const gruposEl = document.getElementById("grupos")
-      const avisosEl = document.getElementById("avisos")
 
-      if (organigramaEl && currentScrollY < organigramaEl.offsetTop + organigramaEl.offsetHeight * 0.5) {
-        currentSectionIndex = 1 // organigrama
-      } else if (gruposEl && currentScrollY < gruposEl.offsetTop + gruposEl.offsetHeight * 0.5) {
-        currentSectionIndex = 2 // grupos
+      if (avisosEl && currentScrollY < avisosEl.offsetTop + avisosEl.offsetHeight * 0.5) {
+        currentSectionIndex = 1 // avisos
+      } else if (organigramaEl && currentScrollY < organigramaEl.offsetTop + organigramaEl.offsetHeight * 0.5) {
+        currentSectionIndex = 2 // organigrama
       } else {
-        currentSectionIndex = 3 // avisos
+        currentSectionIndex = 3 // grupos
       }
     }
 
@@ -514,11 +544,47 @@ export default function UnitecLandingPage() {
     const nextSectionIndex = (currentSectionIndex + 1) % sections.length
     const nextSection = sections[nextSectionIndex]
 
-    if (nextSection === "hero") {
-      window.scrollTo({ top: 0, behavior: "smooth" })
-    } else {
-      document.getElementById(nextSection)?.scrollIntoView({ behavior: "smooth" })
+    document.getElementById(nextSection)?.scrollIntoView({ behavior: "smooth" })
+  }
+
+  const handleIframeLoad = () => {
+    setIframeLoading(false)
+    try {
+      // Try to access iframe content to detect if it loaded properly
+      const iframe = document.querySelector('iframe[title="Encuesta para el UNITEC"]') as HTMLIFrameElement
+      if (iframe) {
+        // Set a timeout to check if iframe content loaded
+        setTimeout(() => {
+          try {
+            // If we can't access the iframe or it redirected to login, show fallback
+            if (
+              iframe.contentWindow?.location.href.includes("login.microsoftonline.com") ||
+              iframe.contentWindow?.location.href.includes("login.live.com")
+            ) {
+              setIframeError(true)
+            }
+          } catch (e) {
+            // Cross-origin error means iframe loaded external content (likely login page)
+            if (e instanceof DOMException && e.name === "SecurityError") {
+              setIframeError(true)
+            }
+          }
+        }, 3000)
+      }
+    } catch (error) {
+      console.log("[v0] Iframe access error:", error)
+      setIframeError(true)
     }
+  }
+
+  const handleIframeError = () => {
+    console.log("[v0] Iframe failed to load")
+    setIframeLoading(false)
+    setIframeError(true)
+  }
+
+  const openFormInNewTab = () => {
+    window.open("https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=cx1fwilK2kKhcqQ8YxCP1vnTKfvXAoRIukUwUeO3x0FUQ05JQkZVNjhSNVFIOVkxUENKSFpRSzg3VS4u", "_blank")
   }
 
   return (
@@ -576,22 +642,22 @@ export default function UnitecLandingPage() {
                 <button
                   className="flex items-center space-x-2 text-slate-300 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-lg transition-all duration-300 text-left"
                   onClick={() => {
-                    document.getElementById("grupos")?.scrollIntoView({ behavior: "smooth" })
-                    setIsMenuOpen(false)
-                  }}
-                >
-                  <Users className="w-4 h-4" />
-                  <span>Ver Grupos</span>
-                </button>
-                <button
-                  className="flex items-center space-x-2 text-slate-300 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-lg transition-all duration-300 text-left"
-                  onClick={() => {
                     document.getElementById("avisos")?.scrollIntoView({ behavior: "smooth" })
                     setIsMenuOpen(false)
                   }}
                 >
                   <Bell className="w-4 h-4" />
                   <span>Ver Avisos</span>
+                </button>
+                <button
+                  className="flex items-center space-x-2 text-slate-300 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-lg transition-all duration-300 text-left"
+                  onClick={() => {
+                    document.getElementById("grupos")?.scrollIntoView({ behavior: "smooth" })
+                    setIsMenuOpen(false)
+                  }}
+                >
+                  <Users className="w-4 h-4" />
+                  <span>Ver Grupos</span>
                 </button>
                 <button
                   className="flex items-center space-x-2 text-slate-300 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-lg transition-all duration-300 text-left"
@@ -615,22 +681,183 @@ export default function UnitecLandingPage() {
         </div>
       </header>
 
-      <section className="min-h-screen flex items-center justify-center px-2 sm:px-4 lg:px-6 py-8 sm:py-12">
-        <div className="w-full max-w-7xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-4 sm:mb-6 animate-fade-in-up">
-            Bienvenido a la <span className="text-blue-600 animate-pulse">Comunidad Unitec</span>
-          </h2>
-          <p
-            className="text-base sm:text-lg md:text-xl text-slate-600 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed animate-fade-in-up px-4"
-            style={{ animationDelay: "300ms" }}
-          >
-            Únete a nuestra vibrante comunidad estudiantil de Sistemas y Ciberseguridad. Participa en 13 grupos de
-            WhatsApp que abarcan desde actividades deportivas y culturales.
-          </p>
+      <section
+        id="encuesta"
+        className="min-h-screen flex items-center py-8 sm:py-12 px-2 sm:px-4 lg:px-6 bg-gradient-to-br from-purple-50 to-blue-50"
+      >
+        <div className="w-full max-w-7xl mx-auto">
+          <div className="text-center mb-6 sm:mb-8 lg:mb-12">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-4 sm:mb-6 animate-fade-in-up">
+              <span className="text-purple-600 animate-pulse">Encuesta de Tallas</span> para Camisas
+            </h2>
+            <p
+              className="text-base sm:text-lg md:text-xl text-slate-600 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed animate-fade-in-up px-4"
+              style={{ animationDelay: "300ms" }}
+            >
+              Completa la encuesta para registrar tu talla y garantizar la correcta entrega de tu camisa personalizada
+              de la comunidad Unitec de Sistemas y Ciberseguridad.
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto mb-8">
+            <Card className="border-l-4 border-l-red-500 bg-red-50 border-red-200">
+              <CardHeader className="pb-3">
+                <CardTitle className="text-lg font-semibold text-red-800 flex items-center">
+                  <Bell className="w-5 h-5 mr-2" />
+                  Tiempo Restante para Completar la Encuesta
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-4 gap-4 text-center mb-4">
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <div className="text-2xl font-bold text-red-600">{timeLeft.days}</div>
+                    <div className="text-sm text-red-500">Días</div>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <div className="text-2xl font-bold text-red-600">{timeLeft.hours}</div>
+                    <div className="text-sm text-red-500">Horas</div>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <div className="text-2xl font-bold text-red-600">{timeLeft.minutes}</div>
+                    <div className="text-sm text-red-500">Minutos</div>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <div className="text-2xl font-bold text-red-600">{timeLeft.seconds}</div>
+                    <div className="text-sm text-red-500">Segundos</div>
+                  </div>
+                </div>
+                <p className="text-red-700 text-center font-semibold">
+                  La encuesta finaliza el <strong>Miércoles 17 de Septiembre a las 23:59</strong>
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Survey Requirements */}
+          <div className="max-w-4xl mx-auto mb-8">
+            <Card className="border-l-4 border-l-orange-500 bg-orange-50 border-orange-200">
+              <CardHeader className="pb-3">
+                <CardTitle className="text-lg font-semibold text-orange-800 flex items-center">
+                  <Bell className="w-5 h-5 mr-2" />
+                  Consideraciones Importantes
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2 text-orange-700">
+                  <p className="flex items-start">
+                    <span className="font-semibold mr-2">•</span>
+                    Para poder contestar debe estar la sesión iniciada en el correo institucional por temas de seguridad
+                  </p>
+                  <p className="flex items-start">
+                    <span className="font-semibold mr-2">•</span>
+                    La encuesta finaliza el Miércoles 17 de Septiembre a las 23:59
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Embedded Survey */}
+          <div className="max-w-4xl mx-auto">
+            <Card className="shadow-xl border-0 overflow-hidden">
+              <CardContent className="p-0">
+                <div className="bg-white rounded-lg">
+                  {!iframeError ? (
+                    <>
+                      {iframeLoading && (
+                        <div className="flex items-center justify-center h-96 bg-gray-50 rounded-lg">
+                          <div className="text-center">
+                            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto mb-4"></div>
+                            <p className="text-gray-600">Cargando encuesta...</p>
+                          </div>
+                        </div>
+                      )}
+                      <iframe
+                        src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=cx1fwilK2kKhcqQ8YxCP1vnTKfvXAoRIukUwUeO3x0FUQ05JQkZVNjhSNVFIOVkxUENKSFpRSzg3VS4u"
+                        width="100%"
+                        height="800"
+                        frameBorder="0"
+                        marginHeight={0}
+                        marginWidth={0}
+                        className={`rounded-lg ${iframeLoading ? "hidden" : "block"}`}
+                        title="Encuesta para el UNITEC"
+                        onLoad={handleIframeLoad}
+                        onError={handleIframeError}
+                      >
+                        Cargando…
+                      </iframe>
+                    </>
+                  ) : (
+                    <div className="flex flex-col items-center justify-center h-96 bg-gray-50 rounded-lg p-8 text-center">
+                      <div className="mb-6">
+                        <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                          <Bell className="w-8 h-8 text-orange-600" />
+                        </div>
+                        <h3 className="text-xl font-semibold text-gray-800 mb-2">Autenticación Requerida</h3>
+                        <p className="text-gray-600 mb-4 max-w-md">
+                          Para acceder a la encuesta, necesitas iniciar sesión con tu cuenta institucional. Por
+                          seguridad, esto debe hacerse en una nueva pestaña.
+                        </p>
+                      </div>
+
+                      <div className="space-y-3">
+                        <Button
+                          onClick={openFormInNewTab}
+                          className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105"
+                        >
+                          <ExternalLink className="w-5 h-5 mr-2" />
+                          Abrir Encuesta en Nueva Pestaña
+                        </Button>
+
+                        <p className="text-sm text-gray-500">
+                          Asegúrate de estar conectado con tu correo institucional
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Alternative QR Code Section */}
+          <div className="max-w-2xl mx-auto mt-8 text-center">
+            <Card className="bg-slate-100 border-slate-200">
+              <CardHeader>
+                <CardTitle className="text-lg font-semibold text-slate-800">¿Prefieres usar tu móvil?</CardTitle>
+                <CardDescription>
+                  Escanea el código QR para acceder a la encuesta desde tu dispositivo móvil
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="flex flex-col items-center space-y-4">
+                <div className="w-32 h-32 bg-white border-2 border-slate-300 rounded-lg flex items-center justify-center">
+                  <img src="/qr-encuesta.png" alt="Código QR para la encuesta" className="w-28 h-28" />
+                </div>
+                <Button
+                  className="bg-purple-600 hover:bg-purple-700 text-white"
+                  onClick={() =>
+                    window.open("https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=cx1fwilK2kKhcqQ8YxCP1vnTKfvXAoRIukUwUeO3x0FUQ05JQkZVNjhSNVFIOVkxUENKSFpRSzg3VS4u", "_blank")
+                  }
+                >
+                  Abrir Encuesta en Nueva Pestaña
+                  <ExternalLink className="w-4 h-4 ml-2" />
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+
           <div
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in-up px-4"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in-up px-4 mt-8"
             style={{ animationDelay: "600ms" }}
           >
+            <Button
+              size="lg"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto"
+              onClick={() => document.getElementById("grupos")?.scrollIntoView({ behavior: "smooth" })}
+            >
+              Ver Grupos de WhatsApp
+              <ExternalLink className="w-5 h-5 ml-2 animate-bounce" />
+            </Button>
             <Button
               size="lg"
               className="bg-purple-600 hover:bg-purple-700 text-white px-6 sm:px-8 py-3 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto"
@@ -639,32 +866,28 @@ export default function UnitecLandingPage() {
               Ver Camisas 3D
               <ExternalLink className="w-5 h-5 ml-2 animate-bounce" />
             </Button>
-            <Button
-              size="lg"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto"
-              onClick={() => document.getElementById("grupos")?.scrollIntoView({ behavior: "smooth" })}
+          </div>
+        </div>
+      </section>
+
+      <section id="avisos" className="min-h-screen flex items-center py-8 sm:py-12 px-2 sm:px-4 lg:px-6 bg-slate-50">
+        <div className="w-full max-w-7xl mx-auto">
+          <div className="text-center mb-6 sm:mb-8 lg:mb-12">
+            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-800 mb-3 sm:mb-4 animate-fade-in-up">
+              Avisos y Noticias
+            </h3>
+            <p
+              className="text-sm sm:text-base md:text-lg text-slate-600 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up px-4"
+              style={{ animationDelay: "200ms" }}
             >
-              Explorar Grupos
-              <ExternalLink className="w-5 h-5 ml-2 animate-bounce" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-slate-300 text-slate-700 hover:bg-slate-50 px-6 sm:px-8 py-3 bg-transparent transform hover:scale-105 transition-all duration-300 w-full sm:w-auto"
-              onClick={() => document.getElementById("avisos")?.scrollIntoView({ behavior: "smooth" })}
-            >
-              Ver Avisos
-              <Bell className="w-5 h-5 ml-2 animate-swing" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-slate-300 text-slate-700 hover:bg-slate-50 px-6 sm:px-8 py-3 bg-transparent transform hover:scale-105 transition-all duration-300 w-full sm:w-auto"
-              onClick={() => document.getElementById("organigrama")?.scrollIntoView({ behavior: "smooth" })}
-            >
-              Ver Organigrama
-              <Users className="w-5 h-5 ml-2 animate-pulse" />
-            </Button>
+              Mantente al día con los eventos, competencias y oportunidades de nuestra UNITEC.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 px-2 sm:px-0">
+            {announcements.map((announcement, index) => (
+              <AnnouncementCard key={announcement.id} announcement={announcement} index={index} />
+            ))}
           </div>
         </div>
       </section>
@@ -708,28 +931,6 @@ export default function UnitecLandingPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 px-2 sm:px-0">
             {whatsappGroups.map((group, index) => (
               <GroupCard key={group.id} group={group} index={index} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="avisos" className="min-h-screen flex items-center py-8 sm:py-12 px-2 sm:px-4 lg:px-6 bg-slate-50">
-        <div className="w-full max-w-7xl mx-auto">
-          <div className="text-center mb-6 sm:mb-8 lg:mb-12">
-            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-800 mb-3 sm:mb-4 animate-fade-in-up">
-              Avisos y Noticias
-            </h3>
-            <p
-              className="text-sm sm:text-base md:text-lg text-slate-600 max-w-3xl mx-auto animate-fade-in-up px-4"
-              style={{ animationDelay: "200ms" }}
-            >
-              Mantente al día con los eventos, competencias y oportunidades de nuestra UNITEC.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 px-2 sm:px-0">
-            {announcements.map((announcement, index) => (
-              <AnnouncementCard key={announcement.id} announcement={announcement} index={index} />
             ))}
           </div>
         </div>
@@ -784,7 +985,7 @@ export default function UnitecLandingPage() {
       </footer>
 
       <Button
-        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 bg-blue-600 hover:bg-blue-700 text-white rounded-full w-12 h-12 sm:w-14 sm:h-14 shadow-lg z-50 hover:animate-pulse transform hover:scale-110 transition-all duration-300"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 bg-blue-600 hover:bg-blue-700 text-white rounded-full w-12 h-12 sm:w-14 sm:h-14 shadow-lg z-50 animate-bounce hover:animate-pulse transform hover:scale-110 transition-all duration-300"
         onClick={scrollToNextSection}
         title="Navegar a siguiente sección"
       >
