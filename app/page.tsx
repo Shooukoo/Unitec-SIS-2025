@@ -1,7 +1,5 @@
 "use client"
-import { Analytics } from "@vercel/analytics/next";
 import { useState } from "react"
-import Image from "next/image";
 import {
   Users,
   MessageCircle,
@@ -322,13 +320,9 @@ function GroupCard({ group, index }: { group: (typeof whatsappGroups)[0]; index:
     >
       <CardHeader className="pb-3">
         <div className="mb-4 overflow-hidden rounded-lg">
-          <Image
+          <img
             src={group.image || "/placeholder.svg"}
             alt={`Banner de ${group.name}`}
-            width={400}
-            height={200}
-            placeholder="blur"
-            blurDataURL="/placeholder.svg"
             className="w-full h-32 sm:h-24 object-cover group-hover:scale-105 transition-transform duration-300"
           />
         </div>
@@ -336,6 +330,12 @@ function GroupCard({ group, index }: { group: (typeof whatsappGroups)[0]; index:
           <CardTitle className="text-lg font-semibold text-slate-800 group-hover:text-blue-700 transition-colors duration-300">
             {group.name}
           </CardTitle>
+          <Badge
+            variant="secondary"
+            className="bg-blue-100 text-blue-700 group-hover:bg-blue-200 transition-colors duration-300"
+          >
+            {group.members} miembros
+          </Badge>
         </div>
         <CardDescription className="text-slate-600">{group.description}</CardDescription>
       </CardHeader>
@@ -375,7 +375,7 @@ function AnnouncementCard({ announcement, index }: { announcement: (typeof annou
         <div className="flex items-center justify-between">
           <CardTitle className="text-lg font-semibold text-slate-800">{announcement.title}</CardTitle>
           <Badge
-            className={`${getTypeColor(announcement.type)} `}
+            className={`${getTypeColor(announcement.type)} animate-bounce`}
             style={{ animationDelay: `${index * 200 + 1000}ms` }}
           >
             {announcement.type}
@@ -393,22 +393,24 @@ function AnnouncementCard({ announcement, index }: { announcement: (typeof annou
 function OrganizationalCard({ person }: { person: any }) {
   return (
     <div className="bg-[#0B1120] rounded-2xl p-4 sm:p-6 text-white w-full sm:min-w-[280px] sm:max-w-[320px] mx-auto transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl">
+      {/* Name at top */}
       <h3 className="text-base sm:text-lg font-bold text-left mb-3 sm:mb-4 font-sans">{person.name}</h3>
+
+      {/* Photo placeholder in center */}
       <div className="flex justify-center mb-3 sm:mb-4">
         <div className="w-48 sm:w-60 aspect-[3/4] flex items-center justify-center overflow-hidden rounded-lg">
-          <Image
+          <img
             src={person.photo || "/placeholder.svg"}
             alt={`Foto de ${person.name}`}
-            width={300}
-            height={400}
-            placeholder="blur"
-            blurDataURL="/placeholder.svg"
             className="w-full h-full object-cover"
           />
-
         </div>
       </div>
+
+      {/* Position below photo */}
       <p className="text-white font-bold text-left mb-3 sm:mb-4 text-sm sm:text-base">{person.position}</p>
+
+      {/* Instagram button at bottom */}
       <button
         className="w-full bg-white text-[#0B1120] rounded-lg py-2 px-4 flex items-center justify-center hover:bg-gray-100 transition-colors duration-300"
         onClick={() => window.open(`https://instagram.com/${person.instagram.replace("@", "")}`, "_blank")}
@@ -442,10 +444,12 @@ function OrganizationalChart() {
         </div>
       </div>
 
+      {/* Committees */}
       <div className="space-y-6">
         <h4 className="text-xl font-semibold text-slate-800 text-center mb-6">Comités</h4>
         {organizationalChart.committees.map((committee, index) => (
           <div key={committee.name} className="border border-slate-200 rounded-lg overflow-hidden">
+            {/* Committee Header */}
             <button
               className="w-full p-4 bg-slate-100 hover:bg-slate-200 transition-colors duration-300 flex items-center justify-between"
               onClick={() => toggleCommittee(committee.name)}
@@ -460,6 +464,8 @@ function OrganizationalChart() {
                 <ChevronRight className="w-5 h-5 text-slate-600" />
               )}
             </button>
+
+            {/* Committee Content */}
             {expandedCommittees.includes(committee.name) && (
               <div className="p-4 sm:p-6 bg-white animate-fade-in-up">
                 <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-4 sm:gap-6">
@@ -485,10 +491,11 @@ export default function UnitecLandingPage() {
     const currentScrollY = window.scrollY
     const windowHeight = window.innerHeight
 
+    // Determine current section based on scroll position
     let currentSectionIndex = 0
 
     if (currentScrollY < windowHeight * 0.8) {
-      currentSectionIndex = 0
+      currentSectionIndex = 0 // hero
     } else {
       const organigramaEl = document.getElementById("organigrama")
       const gruposEl = document.getElementById("grupos")
@@ -503,6 +510,7 @@ export default function UnitecLandingPage() {
       }
     }
 
+    // Navigate to next section
     const nextSectionIndex = (currentSectionIndex + 1) % sections.length
     const nextSection = sections[nextSectionIndex]
 
@@ -515,6 +523,7 @@ export default function UnitecLandingPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+      {/* Header */}
       <header className="bg-slate-900 text-white shadow-lg animate-slide-down w-full">
         <div className="w-full px-2 sm:px-4 lg:px-6 py-3 sm:py-4 lg:py-6">
           <div className="flex items-center justify-between max-w-7xl mx-auto">
@@ -537,6 +546,8 @@ export default function UnitecLandingPage() {
                   <span>13 Grupos Activos</span>
                 </div>
               </div>
+
+              {/* Hamburger Menu Button */}
               <Button
                 variant="ghost"
                 size="sm"
@@ -547,9 +558,21 @@ export default function UnitecLandingPage() {
               </Button>
             </div>
           </div>
+
+          {/* Mobile Menu */}
           {isMenuOpen && (
             <div className="mt-4 py-4 border-t border-slate-700 animate-fade-in-up max-w-7xl mx-auto">
               <nav className="flex flex-col space-y-3">
+                <button
+                  className="flex items-center space-x-2 text-slate-300 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-lg transition-all duration-300 text-left"
+                  onClick={() => {
+                    window.location.href = "/camisas"
+                    setIsMenuOpen(false)
+                  }}
+                >
+                  <Users className="w-4 h-4" />
+                  <span>Ver Camisas 3D</span>
+                </button>
                 <button
                   className="flex items-center space-x-2 text-slate-300 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-lg transition-all duration-300 text-left"
                   onClick={() => {
@@ -595,19 +618,27 @@ export default function UnitecLandingPage() {
       <section className="min-h-screen flex items-center justify-center px-2 sm:px-4 lg:px-6 py-8 sm:py-12">
         <div className="w-full max-w-7xl mx-auto text-center">
           <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-4 sm:mb-6 animate-fade-in-up">
-            Bienvenido al <span className="text-blue-600 animate-pulse">Unitec Sis - Cib 2025</span>
+            Bienvenido a la <span className="text-blue-600 animate-pulse">Comunidad Unitec</span>
           </h2>
           <p
             className="text-base sm:text-lg md:text-xl text-slate-600 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed animate-fade-in-up px-4"
             style={{ animationDelay: "300ms" }}
           >
-            Únete a este UNITEC de Sistemas y Ciberseguridad. Participa en 13 grupos de
+            Únete a nuestra vibrante comunidad estudiantil de Sistemas y Ciberseguridad. Participa en 13 grupos de
             WhatsApp que abarcan desde actividades deportivas y culturales.
           </p>
           <div
             className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in-up px-4"
             style={{ animationDelay: "600ms" }}
           >
+            <Button
+              size="lg"
+              className="bg-purple-600 hover:bg-purple-700 text-white px-6 sm:px-8 py-3 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto"
+              onClick={() => (window.location.href = "/camisas")}
+            >
+              Ver Camisas 3D
+              <ExternalLink className="w-5 h-5 ml-2 animate-bounce" />
+            </Button>
             <Button
               size="lg"
               className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto"
@@ -645,7 +676,7 @@ export default function UnitecLandingPage() {
         <div className="w-full max-w-7xl mx-auto">
           <div className="text-center mb-6 sm:mb-8 lg:mb-12">
             <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-800 mb-3 sm:mb-4 animate-fade-in-up">
-              Organigrama de la organización del UNITEC
+              Organigrama de la Comunidad
             </h3>
             <p
               className="text-sm sm:text-base md:text-lg text-slate-600 max-w-3xl mx-auto animate-fade-in-up px-4"
@@ -692,7 +723,7 @@ export default function UnitecLandingPage() {
               className="text-sm sm:text-base md:text-lg text-slate-600 max-w-3xl mx-auto animate-fade-in-up px-4"
               style={{ animationDelay: "200ms" }}
             >
-              Mantente al día con los eventos, competencias y oportunidades de nuestro UNITEC.
+              Mantente al día con los eventos, competencias y oportunidades de nuestra UNITEC.
             </p>
           </div>
 
@@ -747,7 +778,7 @@ export default function UnitecLandingPage() {
           </div>
 
           <div className="border-t border-slate-700 mt-4 sm:mt-6 lg:mt-8 pt-4 sm:pt-6 lg:pt-8 text-center">
-            <p className="text-slate-400 text-xs sm:text-sm">© 2025 UNITEC Sistemas - Ciberseguridad. Todos los derechos reservados.</p>
+            <p className="text-slate-400 text-xs sm:text-sm">© 2024 Comunidad Unitec. Todos los derechos reservados.</p>
           </div>
         </div>
       </footer>
