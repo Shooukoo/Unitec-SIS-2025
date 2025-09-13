@@ -155,25 +155,25 @@ const organizationalChart = {
       name: "Emanuel Saldaña.",
       position: "Presidente",
       photo: "/encargados/mani.png",
-      instagram: "@many.unitec",
+      instagram: "@saalem_em",
     },
     {
       name: "Edgar Cortés.",
       position: "Vicepresidente",
       photo: "/encargados/edgar.png",
-      instagram: "@edgar.unitec",
+      instagram: "@edgar_cortes004",
     },
     {
       name: "Yatziri García.",
       position: "Secretaria",
       photo: "/encargados/yatziri.png",
-      instagram: "@yatziri.unitec",
+      instagram: "@yatziri_garcia28",
     },
     {
-      name: "Canela.",
+      name: "Angel Canela.",
       position: "Coordinación General",
       photo: "/encargados/canela.png",
-      instagram: "@canela.unitec",
+      instagram: "@angelcanelaaa",
     },
   ],
   committees: [
@@ -182,21 +182,21 @@ const organizationalChart = {
       description: "Escenografía, inscripciones",
       members: [
         {
-          name: "Mickey.",
+          name: "Miguel Angel.",
           position: "Comité Artístico",
-          photo: "/encargados/mickey.png",
-          instagram: "@mickey.unitec",
+          photo: "/encargados/miguel.png",
+          instagram: "@mickeychael.26",
         },
         {
-          name: "Alondra.",
+          name: "Alondra López.",
           position: "Comité Artístico",
           photo: "/encargados/alondra.png",
-          instagram: "@alondra.unitec",
+          instagram: "@alondramedellin12",
         },
         {
-          name: "Checo.",
+          name: "Sergio Octavio.",
           position: "Comité Artístico",
-          photo: "/encargados/checo.png",
+          photo: "/encargados/usuario.png",
           instagram: "@checo.unitec",
         },
       ],
@@ -206,22 +206,22 @@ const organizationalChart = {
       description: "Logística de juegos",
       members: [
         {
-          name: "Omar.",
+          name: "Omar Vega.",
           position: "Comité Deportivo",
           photo: "/encargados/omar.png",
-          instagram: "@omar.unitec",
+          instagram: "@omar_vl_25",
         },
         {
-          name: "Isis.",
+          name: "Isis Lizbeth.",
           position: "Comité Deportivo",
           photo: "/encargados/isis.png",
-          instagram: "@isis.unitec",
+          instagram: "@isis_lizbeth15",
         },
         {
-          name: "David.",
+          name: "David Melgoza.",
           position: "Comité Deportivo",
           photo: "/encargados/david.png",
-          instagram: "@david.unitec",
+          instagram: "@david_mtz6",
         },
       ],
     },
@@ -230,34 +230,34 @@ const organizationalChart = {
       description: "Espacios, materiales, comunicación",
       members: [
         {
-          name: "Maritza.",
+          name: "Maritza Santibañez.",
           position: "Comité de Logística",
           photo: "/encargados/maritza.png",
-          instagram: "@maritza.unitec",
+          instagram: "@maritza_garcia2004",
         },
         {
-          name: "Poncho.",
+          name: "Alfonso.",
           position: "Comité de Logística",
           photo: "/encargados/poncho.png",
           instagram: "@poncho.unitec",
         },
         {
-          name: "Sahuayo.",
+          name: "Daniel Mendez.",
           position: "Comité de Logística",
-          photo: "/encargados/sahuayo.png",
-          instagram: "@sahuayo.unitec",
+          photo: "/encargados/daniel.png",
+          instagram: "@danielmendez581",
         },
         {
-          name: "David.",
+          name: "David Melgoza.",
           position: "Ayuda Presidencial",
-          photo: "/encargados/david-presidencial.png",
-          instagram: "@david.presidencial.unitec",
+          photo: "/encargados/david.png",
+          instagram: "@david_mtz6",
         },
         {
-          name: "Katia.",
+          name: "Katia Paola.",
           position: "Comité de Logística",
           photo: "/encargados/katia.png",
-          instagram: "@katia.unitec",
+          instagram: "@paola_victoria_58",
         },
       ],
     },
@@ -266,22 +266,22 @@ const organizationalChart = {
       description: "Control del Carnaval y actividades",
       members: [
         {
-          name: "Alexis.",
+          name: "Alexis Chavez.",
           position: "Comité de Seguridad",
           photo: "/encargados/alexis.png",
-          instagram: "@alexis.unitec",
+          instagram: "@__alexm10__",
         },
         {
-          name: "Bryan.",
+          name: "Bryan Esquivel.",
           position: "Comité de Seguridad",
-          photo: "/encargados/bryan.png",
-          instagram: "@bryan.unitec",
+          photo: "/encargados/brayan.png",
+          instagram: "@_bryan_esquivel_",
         },
         {
-          name: "Amado.",
+          name: "Amado Carrillo.",
           position: "Comité de Seguridad",
           photo: "/encargados/amado.png",
-          instagram: "@amado.unitec",
+          instagram: "@",
         },
       ],
     },
@@ -290,22 +290,22 @@ const organizationalChart = {
       description: "Presupuesto, patrocinadores",
       members: [
         {
-          name: "Ludwig.",
+          name: "Daniel Villaseñor.",
+          position: "Comité de Finanzas",
+          photo: "/encargados/danielV.png",
+          instagram: "@",
+        },
+        {
+          name: "Ludwig Iván.",
           position: "Comité de Finanzas",
           photo: "/encargados/ludwig.png",
-          instagram: "@ludwig.unitec",
+          instagram: "@ludwig_ivan11",
         },
         {
-          name: "Checo.",
-          position: "Comité de Finanzas",
-          photo: "/encargados/checo-finanzas.png",
-          instagram: "@checo.finanzas.unitec",
-        },
-        {
-          name: "Isamar.",
+          name: "Isamar Chavez.",
           position: "Comité de Finanzas",
           photo: "/encargados/isamar.png",
-          instagram: "@isamar.unitec",
+          instagram: "@isamarchvez",
         },
       ],
     },
@@ -330,12 +330,6 @@ function GroupCard({ group, index }: { group: (typeof whatsappGroups)[0]; index:
           <CardTitle className="text-lg font-semibold text-slate-800 group-hover:text-blue-700 transition-colors duration-300">
             {group.name}
           </CardTitle>
-          <Badge
-            variant="secondary"
-            className="bg-blue-100 text-blue-700 group-hover:bg-blue-200 transition-colors duration-300"
-          >
-            {group.members} miembros
-          </Badge>
         </div>
         <CardDescription className="text-slate-600">{group.description}</CardDescription>
       </CardHeader>
@@ -688,14 +682,13 @@ export default function UnitecLandingPage() {
         <div className="w-full max-w-7xl mx-auto">
           <div className="text-center mb-6 sm:mb-8 lg:mb-12">
             <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-4 sm:mb-6 animate-fade-in-up">
-              <span className="text-purple-600 animate-pulse">Encuesta de Tallas</span> para Camisas
+              <span className="text-purple-600 animate-pulse">Encuesta</span> para el UNITEC
             </h2>
             <p
               className="text-base sm:text-lg md:text-xl text-slate-600 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed animate-fade-in-up px-4"
               style={{ animationDelay: "300ms" }}
             >
-              Completa la encuesta para registrar tu talla y garantizar la correcta entrega de tu camisa personalizada
-              de la comunidad Unitec de Sistemas y Ciberseguridad.
+              Completa la encuesta para registrar tus datos. Nos ayudaría mucho si la completas :D
             </p>
           </div>
 
